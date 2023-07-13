@@ -314,7 +314,7 @@ public:
 				d0[1] = points[(p+1)*3+1] - dir[(p+1)*3+1]*len0*0.3333f - points[p*3+1];
 				d0[2] = points[(p+1)*3+2] - dir[(p+1)*3+2]*len0*0.3333f - points[p*3+2];
 				float d0lensq = d0[0]*d0[0] + d0[1]*d0[1] + d0[2]*d0[2];
-				float d0len = ( d0lensq > 0 ) ? (float) sqrt(d0lensq) : 1.0f;
+				float d0len = ( d0lensq > 0 ) ? (float) std::sqrt(d0lensq) : 1.0f;
 				dir[p*3]   = d0[0] / d0len;
 				dir[p*3+1] = d0[1] / d0len;
 				dir[p*3+2] = d0[2] / d0len;
@@ -332,7 +332,7 @@ public:
 				d0[1] = - points[(p-1)*3+1] + dir[(p-1)*3+1]*len1*0.3333f + points[p*3+1];
 				d0[2] = - points[(p-1)*3+2] + dir[(p-1)*3+2]*len1*0.3333f + points[p*3+2];
 				d0lensq = d0[0]*d0[0] + d0[1]*d0[1] + d0[2]*d0[2];
-				d0len = ( d0lensq > 0 ) ? (float) sqrt(d0lensq) : 1.0f;
+				d0len = ( d0lensq > 0 ) ? (float) std::sqrt(d0lensq) : 1.0f;
 				dir[p*3]   = d0[0] / d0len;
 				dir[p*3+1] = d0[1] / d0len;
 				dir[p*3+2] = d0[2] / d0len;
@@ -345,7 +345,7 @@ public:
 				d0[1] = points[(p+1)*3+1] - points[p*3+1];
 				d0[2] = points[(p+1)*3+2] - points[p*3+2];
 				float d0lensq = d0[0]*d0[0] + d0[1]*d0[1] + d0[2]*d0[2];
-				float d0len = ( d0lensq > 0 ) ? (float) sqrt(d0lensq) : 1.0f;
+				float d0len = ( d0lensq > 0 ) ? (float) std::sqrt(d0lensq) : 1.0f;
 				dir[p*3]   = d0[0] / d0len;
 				dir[p*3+1] = d0[1] / d0len;
 				dir[p*3+2] = d0[2] / d0len;
@@ -380,7 +380,7 @@ private:
 		d0[1] = p1[1] - p0[1];
 		d0[2] = p1[2] - p0[2];
 		float d0lensq = d0[0]*d0[0] + d0[1]*d0[1] + d0[2]*d0[2];
-		d0len = ( d0lensq > 0 ) ? (float) sqrt(d0lensq) : 1.0f;
+		d0len = ( d0lensq > 0 ) ? (float) std::sqrt(d0lensq) : 1.0f;
 
 		// line from p1 to p2
 		float d1[3];
@@ -388,7 +388,7 @@ private:
 		d1[1] = p2[1] - p1[1];
 		d1[2] = p2[2] - p1[2];
 		float d1lensq = d1[0]*d1[0] + d1[1]*d1[1] + d1[2]*d1[2];
-		d1len = ( d1lensq > 0 ) ? (float) sqrt(d1lensq) : 1.0f;
+		d1len = ( d1lensq > 0 ) ? (float) std::sqrt(d1lensq) : 1.0f;
 
 		// make sure that d0 and d1 has the same length
 		d0[0] *= d1len / d0len;
@@ -400,7 +400,7 @@ private:
 		d[1] = d0[1] + d1[1];
 		d[2] = d0[2] + d1[2];
 		float dlensq = d[0]*d[0] + d[1]*d[1] + d[2]*d[2];
-		float dlen = ( dlensq > 0 ) ? (float) sqrt(dlensq) : 1.0f;
+		float dlen = ( dlensq > 0 ) ? (float) std::sqrt(dlensq) : 1.0f;
 		d[0] /= dlen;
 		d[1] /= dlen;
 		d[2] /= dlen;
